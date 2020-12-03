@@ -1,0 +1,17 @@
+[[package]]
+name = "parse"
+version = "1.18.0"
+description = "parse() is the opposite of format()"
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.9"
+content-hash = "84dbb3d34e743d38d19efc872f9ea55458d344d2788502e3e047d32d3c5a8e74"
+
+[metadata.files]
+parse = [
+    {file = "parse-1.18.0.tar.gz", hash = "sha256:91666032d6723dc5905248417ef0dc9e4c51df9526aaeef271eacad6491f06a4"},
+]
