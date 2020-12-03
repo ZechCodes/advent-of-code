@@ -5,7 +5,7 @@ import pathlib
 TreeMap = list[list[bool]]
 
 
-def count_trees_crossing_map(x_move: int, y_move: int, tree_map: TreeMap):
+def count_trees_crossing_map(x_move: int, y_move: int, tree_map: TreeMap) -> int:
     x = y = tree_count = 0
     while y < len(tree_map):
         if tree_map[y][x]:
