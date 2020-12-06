@@ -3,7 +3,7 @@ import pathlib
 
 
 def decode_number(encoded: str, mapping: tuple[str, str]) -> int:
-    translation = encoded.translate(dict(zip(map(ord, mapping), ("0", "1"))))
+    translation = encoded.translate(encoded.maketrans("".join(mapping), "01"))
     return int(translation, base=2)
 
 
