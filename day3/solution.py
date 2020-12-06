@@ -2,6 +2,7 @@ import io
 import math
 import pathlib
 
+
 TreeMap = list[list[bool]]
 
 
