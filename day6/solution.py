@@ -5,7 +5,7 @@ import pathlib
 
 def process_answers_file(input_file: io.TextIOWrapper) -> list[set[str]]:
     groups = []
-    current = list[]
+    current = set()
     for line in (l.strip() for l in input_file):
         if line:
             current.update(set(line))
