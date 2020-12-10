@@ -1,6 +1,6 @@
-from math import prod
 import io
 import pathlib
+import time
 
 
 def process_input(input_file: io.TextIOWrapper):
@@ -58,5 +58,8 @@ if __name__ == "__main__":
         input_data = process_input(input_file)
 
     print("\nFinal")
+    start = time.time()
+    print("Start", start)
     print(get_jolt_differences(input_data))
-    print(count_combinations(input_data))
+    print(count_combinations(input_data), "\nEnd", (end := time.time()))
+    print(1 / (end - start), "seconds")
