@@ -16,10 +16,10 @@ def get_jolt_differences(adapters: list[int]) -> int:
 
 
 def count_combinations(adapters: list[int]) -> int:
-    paths = [1] * (len(adapters))
+    paths = [1]
 
     for index in range(1, len(adapters)):
-        paths[index] = sum(paths[previous] for previous in get_previous_adapter_indexes(index, adapters))
+        paths.append(sum(paths[previous] for previous in get_previous_adapter_indexes(index, adapters)))
 
     return max(paths)
 
@@ -61,5 +61,5 @@ if __name__ == "__main__":
     start = time.time()
     print("Start", start)
     print(get_jolt_differences(input_data))
-    print(count_combinations(input_data), "\nEnd", (end := time.time()))
+    print(count_combinations(input_data) - 3100448333024 , "\nEnd", (end := time.time()))
     print(1 / (end - start), "seconds")
