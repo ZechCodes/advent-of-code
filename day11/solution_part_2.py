@@ -18,7 +18,7 @@ def get_neighbors(row: int, column: int, grid: list[list[str]]) -> list[str]:
         if row_move == 0 and column_move == 0:
             continue
 
-        for distance in range(1, max(len(grid), len(grid[0]))):
+        for distance in range(1, min(len(grid), len(grid[0]))):
             r = row + row_move * distance
             c = column + column_move * distance
             if (
