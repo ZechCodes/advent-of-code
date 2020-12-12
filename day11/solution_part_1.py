@@ -26,10 +26,9 @@ def get_neighbors(row: int, column: int, grid: list[list[str]]) -> list[str]:
 
 def iterate_grid(grid: list[list[str]]) -> Generator[None, list[list[str]], None]:
     previous_grid, current_grid = grid, recompute_grid(grid)
-    yield current_grid
     while previous_grid != current_grid:
-        previous_grid, current_grid = current_grid, recompute_grid(current_grid)
         yield current_grid
+        previous_grid, current_grid = current_grid, recompute_grid(current_grid)
 
 
 def recompute_grid(grid: list[list[str]]) -> list[list[str]]:
