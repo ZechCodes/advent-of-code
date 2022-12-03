@@ -17,15 +17,19 @@ def can_visit_again_single_small_twice(visited: list[str], cave: str) -> bool:
     if cave.isupper():
         return True
 
-    count = visited.count(cave)
-    if count == 0:
-        return True
+    match (cave, visited.count(cave)):
+        case (_, 0):
+            return True
 
-    elif count == 1 and cave not in {"start", "end"}:
-        counts = Counter(filter(str.islower, visited))
-        return not any(value > 1 for value in counts.values())
+        case ("start" | "end", 1):
+            return False
 
-    return False
+        case (_, 1):
+            counts = Counter(filter(str.islower, visited))
+            return not any(value > 1 for value in counts.values())
+
+        case _:
+            return False
 
 
 def get_paths_from_cave_to_end(
@@ -116,11 +120,7 @@ def solution_1():
 
 
 def get_solution_2_result(cave_map: Map) -> int:
-    return len(
-        get_paths_from_cave_to_end(
-            cave_map, can_visit=can_visit_again_single_small_twice
-        )
-    )
+    return len(get_paths_from_cave_to_end(cave_map, can_visit=can_visit_again_single_small_twice))
 
 
 def test_2():
