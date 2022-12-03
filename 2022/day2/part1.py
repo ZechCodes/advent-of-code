@@ -29,4 +29,4 @@ def get_game_score_following_the_guide() -> int:
 
 
 if __name__ == "__main__":
-    print(f"If you follow the guide you were given you will score  {get_game_score_following_the_guide():,} points.")
+    print(f"If you follow the guide you were given you will score {get_game_score_following_the_guide():,} points.")
