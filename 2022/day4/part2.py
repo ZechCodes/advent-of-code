@@ -3,7 +3,7 @@ from input_parser import parse
 
 def get_number_of_overlapping_assignments() -> int:
     return sum(
-        len(assignment_a & assignment_b) > 0 for assignment_a, assignment_b in parse()
+        bool(assignment_a & assignment_b) for assignment_a, assignment_b in parse()
     )
 
 
