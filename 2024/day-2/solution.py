@@ -34,12 +34,10 @@ def is_mostly_safe(report: Report) -> bool:
     if is_safe(report):
         return True
 
-    for i in range(len(report)):
-        if is_safe(report[:i] + report[i + 1:]):
-            return True
+    if any(is_safe(report[:i] + report[i + 1:]) for i in range(len(report))):
+        return True
 
-    else:
-        return False
+    return False
 
 
 def parse_input(file_name: str) -> list[Report]:
