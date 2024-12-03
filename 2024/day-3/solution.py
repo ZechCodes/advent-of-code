@@ -36,14 +36,14 @@ def get_multiplications(memory: str) -> Generator[tuple[int, int], None, None]:
 
 def get_enabled_multiplications(memory: str) -> Generator[tuple[int, int], None, None]:
     enabled = True
-    for result in re.finditer(r"(do)\(\)|(don't)\(\)|mul\((\d+),(\d+)\)", memory):
+    for result in re.finditer(r"do\(\)|don't\(\)|mul\((\d+),(\d+)\)", memory):
         match result.group():
             case StatusAction.DO:
                 enabled = True
             case StatusAction.DONT:
                 enabled = False
             case _ if enabled:
-                yield map(int, result.groups()[-2:])
+                yield map(int, result.groups())
 
 
 def parse_input(file_name: str) -> str:
