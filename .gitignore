@@ -2,3 +2,5 @@
 /.python-version
 __pycache__
 .python-version
+.zig-cache
+zig-out

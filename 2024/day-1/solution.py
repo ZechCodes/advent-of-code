@@ -33,10 +33,9 @@ def parse_input(file_name: str) -> tuple[list[int], list[int]]:
     return left, right
 
 
-example = [3, 4, 2, 1, 3, 3], [4, 3, 5, 3, 9, 3]
-assert solve_part_1(*example) == 11
+assert solve_part_1(*parse_input("example_input.txt")) == 11
 print(solve_part_1(*parse_input("puzzle_input.txt")))
 
 
-assert solve_part_2(*example) == 31
+assert solve_part_2(*parse_input("example_input.txt")) == 31
 print(solve_part_2(*parse_input("puzzle_input.txt")))
