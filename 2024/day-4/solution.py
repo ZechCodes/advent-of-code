@@ -23,7 +23,6 @@ def solve_part_2(grid: LetterGrid) -> int:
     return count
 
 
-
 def count_word_occurrences(word: str, grid: LetterGrid) -> int:
     return (
         count_word_occurrences_across(word, grid) +
@@ -75,13 +74,6 @@ def rotate_90[T](matrix: list[list[T]]) -> list[list[T]]:
     return [
         list(row)
         for row in zip(*matrix[::-1])
-    ]
-
-
-def flip[T](matrix: list[list[T]]) -> list[list[T]]:
-    return [
-        row[::-1]
-        for row in matrix
     ]
 
 
