@@ -1,14 +1,7 @@
-[tool.poetry]
+[project]
 name = "2024"
 version = "0.1.0"
-description = ""
-authors = ["Zech Zimmerman <hi@zech.codes>"]
+description = "Add your description here"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.12"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.12"
+dependencies = []
